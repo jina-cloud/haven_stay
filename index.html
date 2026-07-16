@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haven Stay - Your Home in Sri Lanka</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="logo.png" alt="Haven Stay Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#explore">Explore</a></li>
+                <li><a href="#rooms">Rooms</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="btn btn-primary">Book now</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <span class="subtitle">Haven Stay</span>
+            <h1>Welcome to Haven Stay<br>Your Home in Sri Lanka</h1>
+            <p>Secure reservations and enjoy the unbridled exotic beauty of the Pearl of the Indian Ocean.</p>
+            <a href="#contact" class="btn btn-primary">Book now</a>
+        </div>
+        <div class="hero-slideshow">
+            <div class="slide active" style="background-image: url('slide1.jpg');"></div>
+            <div class="slide" style="background-image: url('slide2.jpg');"></div>
+            <div class="slide" style="background-image: url('slide3.jpg');"></div>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section id="explore" class="facilities-section">
+        <h2 class="section-title italic">Our Promise: Rest. Recharge. Feel at Home.</h2>
+        
+        <div class="facilities-container">
+            <div class="facilities-heading">
+                <h2 class="script-title">Our<br>Facilities</h2>
+                <p>Everything you need for a comfortable stay.</p>
+            </div>
+            <div class="facilities-grid">
+                <div class="facility-card">
+                    <i class="fa-solid fa-wifi"></i>
+                    <p>Wifi</p>
+                </div>
+                <div class="facility-card">
+                    <i class="fa-solid fa-square-parking"></i>
+                    <p>Parking space</p>
+                </div>
+                <div class="facility-card">
+                    <i class="fa-solid fa-kitchen-set"></i>
+                    <p>Fully equipped<br>modern kitchen</p>
+                </div>
+                <div class="facility-card">
+                    <i class="fa-solid fa-wind"></i>
+                    <p>Rooftop<br>Serenity</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Luxurious Rooms Section -->
+    <section id="rooms" class="rooms-section">
+        <h2 class="section-title text-white">Luxurious Rooms</h2>
+        <p class="section-subtitle text-white">All our rooms designed for your comfort</p>
+        
+        <div class="rooms-grid">
+            <!-- Room 1 -->
+            <div class="room-card">
+                <div class="room-image">
+                    <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=800&auto=format&fit=crop" alt="Standard room">
+                    <span class="price-tag">LKR 12,000 / Night</span>
+                </div>
+                <div class="room-details">
+                    <h3>Standard room with common bathroom</h3>
+                    <button class="btn btn-outline" onclick="document.getElementById('contact').scrollIntoView()">Book Now</button>
+                </div>
+            </div>
+            
+            <!-- Room 2 -->
+            <div class="room-card">
+                <div class="room-image">
+                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=800&auto=format&fit=crop" alt="Deluxe Room">
+                    <span class="price-tag">LKR 18,000 / Night</span>
+                </div>
+                <div class="room-details">
+                    <h3>Deluxe Room with air condition & attached bathroom</h3>
+                    <button class="btn btn-outline" onclick="document.getElementById('contact').scrollIntoView()">Book Now</button>
+                </div>
+            </div>
+            
+            <!-- Room 3 -->
+            <div class="room-card">
+                <div class="room-image">
+                    <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=800&auto=format&fit=crop" alt="Premium Room">
+                    <span class="price-tag">LKR 25,000 / Night</span>
+                </div>
+                <div class="room-details">
+                    <h3>Premium Room with air condition, attached bathroom, & rooftop access</h3>
+                    <button class="btn btn-outline" onclick="document.getElementById('contact').scrollIntoView()">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nearby Section -->
+    <section id="about" class="nearby-section">
+        <h2 class="section-title italic">Everything you need minutes away</h2>
+        
+        <div class="nearby-grid">
+            <div class="nearby-item">
+                <div class="icon-box"><i class="fa-solid fa-house-medical"></i></div>
+                <h4>Healthcare &<br>Medical Centers</h4>
+                <p class="distance">(2.3 - 4.5 km - 10 Mins drive)</p>
+                <p>Kings Hospital, Asiri Surgical, Asiri Medical, Lanka Hospital</p>
+            </div>
+            
+            <div class="nearby-item">
+                <div class="icon-box"><i class="fa-solid fa-store"></i></div>
+                <h4>Daily Essentials</h4>
+                <p class="distance">(Supermarkets & Grocery - 1-3km radius)</p>
+                <p>Keells, Cargills, Laughs, Beverly Hills Shop</p>
+            </div>
+            
+            <div class="nearby-item">
+                <div class="icon-box"><i class="fa-solid fa-burger"></i></div>
+                <h4>Global Dining &<br>Restaurants</h4>
+                <p class="distance">Within 1-4km - 10 mins distance</p>
+                <p>Pizza Hut, Taco Bell, KFC, Bread Talk, Chinese Dragon, Sensal, Subway, Delicacy Cafe</p>
+            </div>
+            
+            <div class="nearby-item">
+                <div class="icon-box"><i class="fa-solid fa-mug-hot"></i></div>
+                <h4>Cafe Culture</h4>
+                <p class="distance">(For the tea lovers)</p>
+                <p>Barista (1 km), Java Lounge (2.5 km)</p>
+            </div>
+            
+            <div class="nearby-item">
+                <div class="icon-box"><i class="fa-solid fa-plane"></i></div>
+                <h4>Travel & Connectivity</h4>
+                <p>Bandaranaike International Airport (BIA) - 35 km<br>(45 mins via Highway)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonies Section -->
+    <section class="testimonies-section">
+        <h2 class="section-title">Testimonies</h2>
+        
+        <div class="testimonies-grid">
+            <div class="testimony-card">
+                <div class="card-header">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+                <p class="quote">"This place was amazing. We traveled with friends, and it was a great experience. The rooms were spacious and clean. The staff was incredibly welcoming and helpful. I highly recommend Haven Stay!"</p>
+                <div class="user-info">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User">
+                    <span>Sarah Jane</span>
+                </div>
+            </div>
+            
+            <div class="testimony-card">
+                <div class="card-header">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+                <p class="quote">"We had a wonderful time. The villa is exactly as shown in the pictures. Very clean, quiet, and peaceful. The kitchen was fully equipped which made cooking very easy. Will definitely visit again."</p>
+                <div class="user-info">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="User">
+                    <span>Elena Smith</span>
+                </div>
+            </div>
+            
+            <div class="testimony-card">
+                <div class="card-header">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+                <p class="quote">"Perfect location and great amenities. The rooftop was my favorite spot to relax in the evening. The wifi was fast, which was great since I had to do some work during my stay. 10/10."</p>
+                <div class="user-info">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User">
+                    <span>Mark Johnson</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="contact" class="booking-section">
+        <h2 class="section-title">Book Your Date</h2>
+        
+        <form class="booking-form" id="bookingForm" action="https://formsubmit.co/asjainldjf@gmail.com" method="POST">
+            <!-- Add a subject line for the email -->
+            <input type="hidden" name="_subject" value="New Booking Request for Haven Stay">
+            <!-- Disable recaptcha for simple usage, or leave default -->
+            <input type="hidden" name="_captcha" value="false">
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" name="name" id="fullName" placeholder="e.g. John Smith" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="john.smith@gmail.com" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="dateFrom">Date</label>
+                    <div class="date-inputs">
+                        <input type="date" name="date_from" id="dateFrom" required>
+                        <input type="date" name="date_to" id="dateTo" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="roomType">Room Type</label>
+                    <select name="room_type" id="roomType" required>
+                        <option value="" disabled selected>Select Room</option>
+                        <option value="standard">Standard Room</option>
+                        <option value="deluxe">Deluxe Room</option>
+                        <option value="premium">Premium Room</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea name="message" id="message" rows="4"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Check Availability</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <img src="logo.png" alt="Haven Stay Logo" class="footer-logo-img">
+                <p>Welcome to Haven Stay, your home away from home in Sri Lanka. We offer premium accommodation, modern amenities, and a relaxing environment to make your stay unforgettable. Experience the beauty of the island with us.</p>
+            </div>
+            <div class="footer-right">
+                <p>&copy; 2026 Haven Stay. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
