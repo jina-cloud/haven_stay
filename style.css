@@ -728,6 +728,12 @@ ul {
         max-width: 100%;
     }
     
+    .hero-slideshow {
+        width: 90%;
+        margin: 0 auto 50px auto;
+        min-height: 250px;
+    }
+    
     .facilities-container {
         flex-direction: column;
         text-align: center;
