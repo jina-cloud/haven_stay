@@ -565,6 +565,47 @@ ul {
     resize: vertical;
 }
 
+/* Partners Section */
+.partners-section {
+    padding: 60px 10%;
+    background-color: var(--white);
+}
+
+.partners-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.partner-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.partner-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    color: white;
+}
+
+.booking-btn {
+    background-color: #003580; /* Booking.com blue */
+}
+
+.agoda-btn {
+    background-color: #e12d2d; /* Agoda red */
+}
+
 /* Footer */
 .footer {
     background-color: var(--footer-bg);
