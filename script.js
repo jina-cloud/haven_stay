@@ -74,16 +74,14 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Gallery Popup Functions
-const galleryPopup = document.getElementById('galleryPopup');
-const galleryMainImage = document.getElementById('galleryMainImage');
-const closeGalleryBtn = document.getElementById('closeGalleryBtn');
-
 function openGallery() {
-    galleryPopup.classList.add('show');
+    const popup = document.getElementById('galleryPopup');
+    if (popup) popup.classList.add('show');
 }
 
 function changeGalleryImage(src, element) {
-    galleryMainImage.src = src;
+    const mainImg = document.getElementById('galleryMainImage');
+    if (mainImg) mainImg.src = src;
     
     // Remove active class from all thumbs
     document.querySelectorAll('.gallery-thumbnails .thumb').forEach(thumb => {
@@ -91,11 +89,15 @@ function changeGalleryImage(src, element) {
     });
     
     // Add active class to clicked thumb
-    element.classList.add('active-thumb');
+    if (element) element.classList.add('active-thumb');
 }
 
-if (closeGalleryBtn) {
-    closeGalleryBtn.addEventListener('click', () => {
-        galleryPopup.classList.remove('show');
-    });
-}
+// Attach event listener directly without relying on global const if possible
+document.addEventListener('DOMContentLoaded', () => {
+    const closeGalleryBtn = document.getElementById('closeGalleryBtn');
+    if (closeGalleryBtn) {
+        closeGalleryBtn.addEventListener('click', () => {
+            document.getElementById('galleryPopup').classList.remove('show');
+        });
+    }
+});
