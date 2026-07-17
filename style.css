@@ -134,6 +134,20 @@ ul {
     color: var(--primary-color);
 }
 
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-dark);
+    transition: all 0.3s ease-in-out;
+}
+
 /* Hero Section */
 .hero {
     display: flex;
@@ -676,10 +690,30 @@ ul {
 }
 
 @media (max-width: 768px) {
-    .nav-links {
-        display: none; /* Add hamburger menu later if needed */
+    .menu-toggle {
+        display: flex;
     }
     
+    .nav-links {
+        position: absolute;
+        top: 80px;
+        left: -100%;
+        flex-direction: column;
+        background-color: var(--white);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        padding: 20px 0;
+    }
+    
+    .nav-links.active {
+        left: 0;
+    }
+    
+    .nav-links li {
+        margin: 15px 0;
+    }
     .hero {
         flex-direction: column;
     }

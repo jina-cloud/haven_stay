@@ -94,6 +94,23 @@ function changeGalleryImage(src, element) {
 
 // Attach event listener directly without relying on global const if possible
 document.addEventListener('DOMContentLoaded', () => {
+    // Mobile Menu Toggle
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (mobileMenu && navLinks) {
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close menu when a link is clicked
+        navLinks.querySelectorAll('li a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    }
+
     const closeGalleryBtn = document.getElementById('closeGalleryBtn');
     if (closeGalleryBtn) {
         closeGalleryBtn.addEventListener('click', () => {
