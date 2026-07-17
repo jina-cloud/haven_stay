@@ -72,3 +72,30 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Gallery Popup Functions
+const galleryPopup = document.getElementById('galleryPopup');
+const galleryMainImage = document.getElementById('galleryMainImage');
+const closeGalleryBtn = document.getElementById('closeGalleryBtn');
+
+function openGallery() {
+    galleryPopup.classList.add('show');
+}
+
+function changeGalleryImage(src, element) {
+    galleryMainImage.src = src;
+    
+    // Remove active class from all thumbs
+    document.querySelectorAll('.gallery-thumbnails .thumb').forEach(thumb => {
+        thumb.classList.remove('active-thumb');
+    });
+    
+    // Add active class to clicked thumb
+    element.classList.add('active-thumb');
+}
+
+if (closeGalleryBtn) {
+    closeGalleryBtn.addEventListener('click', () => {
+        galleryPopup.classList.remove('show');
+    });
+}
