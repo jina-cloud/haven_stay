@@ -188,9 +188,12 @@
 
     <!-- Testimonies Section -->
     <section class="testimonies-section">
-        <h2 class="section-title">Testimonies</h2>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 15px; margin-bottom: 50px;">
+            <h2 class="section-title" style="margin-bottom: 0;">Testimonies</h2>
+            <button class="btn btn-primary" onclick="document.getElementById('reviewPopup').classList.add('show')">Add your review</button>
+        </div>
         
-        <div class="testimonies-grid">
+        <div class="testimonies-grid" id="testimoniesGrid">
             <div class="testimony-card">
                 <div class="card-header">
                     <div class="stars">
@@ -381,6 +384,26 @@
                 <img src="room4_preview1.jpg" class="thumb" onclick="changeGalleryImage4('room4_preview1.jpg', this)" loading="lazy">
                 <img src="room4_preview2.jpg" class="thumb" onclick="changeGalleryImage4('room4_preview2.jpg', this)" loading="lazy">
             </div>
+        </div>
+    </div>
+
+    <!-- Review Popup -->
+    <div id="reviewPopup" class="popup-overlay">
+        <div class="popup-content">
+            <span class="close-gallery" onclick="document.getElementById('reviewPopup').classList.remove('show')">&times;</span>
+            <div class="popup-icon"><i class="fa-solid fa-comment-dots"></i></div>
+            <h3>Add Your Review</h3>
+            <form id="reviewForm" style="text-align: left; margin-top: 20px;">
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label>Your Name</label>
+                    <input type="text" id="reviewName" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                </div>
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label>Your Review</label>
+                    <textarea id="reviewText" required rows="4" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Submit Review</button>
+            </form>
         </div>
     </div>
 

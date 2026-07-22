@@ -194,4 +194,39 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('galleryPopup4').classList.remove('show');
         });
     }
+
+    const reviewForm = document.getElementById('reviewForm');
+    if (reviewForm) {
+        reviewForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('reviewName').value;
+            const text = document.getElementById('reviewText').value;
+            const grid = document.getElementById('testimoniesGrid');
+            
+            if (name && text && grid) {
+                const card = document.createElement('div');
+                card.className = 'testimony-card';
+                card.innerHTML = `
+                    <div class="card-header">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="quote">"${text}"</p>
+                    <div class="user-info">
+                        <img src="https://randomuser.me/api/portraits/lego/1.jpg" alt="User" loading="lazy">
+                        <span>${name}</span>
+                    </div>
+                `;
+                
+                grid.insertBefore(card, grid.firstChild);
+                
+                document.getElementById('reviewPopup').classList.remove('show');
+                reviewForm.reset();
+                
+                // Scroll to the review
+                card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        });
+    }
 });
