@@ -6,6 +6,7 @@
     <title>Haven Stay - Your Home in Sri Lanka</title>
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="logo.png">
+    <link rel="preload" as="image" href="slide1.jpg">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -95,7 +96,7 @@
             <!-- Room 1 -->
             <div class="room-card">
                 <div class="room-image">
-                    <img src="room1.jpg" alt="Superior Double Room with Balcony">
+                    <img src="room1.jpg" alt="Superior Double Room with Balcony" loading="lazy">
                     <span class="price-tag">LKR 12,000 / Night</span>
                 </div>
                 <div class="room-details">
@@ -107,7 +108,7 @@
             <!-- Room 2 -->
             <div class="room-card">
                 <div class="room-image">
-                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=800&auto=format&fit=crop" alt="Deluxe Room">
+                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=800&auto=format&fit=crop" alt="Deluxe Room" loading="lazy">
                     <span class="price-tag">LKR 18,000 / Night</span>
                 </div>
                 <div class="room-details">
@@ -119,7 +120,7 @@
             <!-- Room 3 -->
             <div class="room-card">
                 <div class="room-image">
-                    <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=800&auto=format&fit=crop" alt="Premium Room">
+                    <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=800&auto=format&fit=crop" alt="Premium Room" loading="lazy">
                     <span class="price-tag">LKR 25,000 / Night</span>
                 </div>
                 <div class="room-details">
@@ -184,7 +185,7 @@
                 </div>
                 <p class="quote">"This place was amazing. We traveled with friends, and it was a great experience. The rooms were spacious and clean. The staff was incredibly welcoming and helpful. I highly recommend Haven Stay!"</p>
                 <div class="user-info">
-                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User" loading="lazy">
                     <span>Sarah Jane</span>
                 </div>
             </div>
@@ -197,7 +198,7 @@
                 </div>
                 <p class="quote">"We had a wonderful time. The villa is exactly as shown in the pictures. Very clean, quiet, and peaceful. The kitchen was fully equipped which made cooking very easy. Will definitely visit again."</p>
                 <div class="user-info">
-                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="User">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="User" loading="lazy">
                     <span>Elena Smith</span>
                 </div>
             </div>
@@ -210,7 +211,7 @@
                 </div>
                 <p class="quote">"Perfect location and great amenities. The rooftop was my favorite spot to relax in the evening. The wifi was fast, which was great since I had to do some work during my stay. 10/10."</p>
                 <div class="user-info">
-                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" loading="lazy">
                     <span>Mark Johnson</span>
                 </div>
             </div>
@@ -271,17 +272,17 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-left">
-                <img src="logo.png" alt="Haven Stay Logo" class="footer-logo-img">
+                <img src="logo.png" alt="Haven Stay Logo" class="footer-logo-img" loading="lazy">
                 <p>Welcome to Haven Stay, your home away from home in Sri Lanka. We offer premium accommodation, modern amenities, and a relaxing environment to make your stay unforgettable. Experience the beauty of the island with us.</p>
             </div>
             <div class="footer-partners">
                 <h3>Find us on</h3>
                 <div class="partner-logos">
                     <a href="https://www.booking.com/Share-x7z9k0" target="_blank">
-                        <img src="booking-logo.png" alt="Booking.com Logo" class="partner-logo">
+                        <img src="booking-logo.png" alt="Booking.com Logo" class="partner-logo" loading="lazy">
                     </a>
                     <a href="https://www.agoda.com/haven-stay-h86281481/hotel/colombo-lk.html?%3FcountryId=82&finalPriceView=1&isShowMobileAppPrice=false&cid=1922893&numberOfBedrooms=&familyMode=false&adults=2&children=0&rooms=1&maxRooms=0&checkIn=2026-07-12&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&travellerType=1&showReviewSubmissionEntry=false&currencyCode=USD&isFreeOccSearch=false&tag=e8270226-244d-4884-85d9-8fe4141dae0b&flightSearchCriteria=%5Bobject+Object%5D&los=1&searchrequestid=1828363f-2a38-4f46-b3d2-43d9a45db5c8&ds=NNqnyyKpce7C9lGX" target="_blank">
-                        <img src="agoda-logo.png" alt="agoda.com logo" class="partner-logo">
+                        <img src="agoda-logo.png" alt="agoda.com logo" class="partner-logo" loading="lazy">
                     </a>
                 </div>
             </div>
@@ -306,13 +307,13 @@
         <div class="popup-content gallery-content">
             <span class="close-gallery" id="closeGalleryBtn">&times;</span>
             <div class="gallery-slider">
-                <img id="galleryMainImage" src="room1_preview1.jpg" alt="Room Preview">
+                <img id="galleryMainImage" src="room1_preview1.jpg" alt="Room Preview" loading="lazy">
             </div>
             <div class="gallery-thumbnails">
-                <img src="room1_preview1.jpg" class="thumb active-thumb" onclick="changeGalleryImage('room1_preview1.jpg', this)">
-                <img src="room1_preview2.jpg" class="thumb" onclick="changeGalleryImage('room1_preview2.jpg', this)">
-                <img src="room1_preview3.jpg" class="thumb" onclick="changeGalleryImage('room1_preview3.jpg', this)">
-                <img src="room1_preview4.jpg" class="thumb" onclick="changeGalleryImage('room1_preview4.jpg', this)">
+                <img src="room1_preview1.jpg" class="thumb active-thumb" onclick="changeGalleryImage('room1_preview1.jpg', this)" loading="lazy">
+                <img src="room1_preview2.jpg" class="thumb" onclick="changeGalleryImage('room1_preview2.jpg', this)" loading="lazy">
+                <img src="room1_preview3.jpg" class="thumb" onclick="changeGalleryImage('room1_preview3.jpg', this)" loading="lazy">
+                <img src="room1_preview4.jpg" class="thumb" onclick="changeGalleryImage('room1_preview4.jpg', this)" loading="lazy">
             </div>
         </div>
     </div>
