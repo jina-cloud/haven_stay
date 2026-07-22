@@ -1,3 +1,14 @@
+const firebaseConfig = {
+  apiKey: "AIzaSyAxSqm84wUvfXiK39YyNtqJTuGNmrqj-fY",
+  authDomain: "havenstay-af0e2.firebaseapp.com",
+  projectId: "havenstay-af0e2",
+  storageBucket: "havenstay-af0e2.firebasestorage.app",
+  messagingSenderId: "193131159219",
+  appId: "1:193131159219:web:52e5729b061b84bcdfdac6"
+};
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+
 document.addEventListener('DOMContentLoaded', () => {
     // Navbar scroll effect
     const navbar = document.querySelector('.navbar');
@@ -199,50 +210,62 @@ document.addEventListener('DOMContentLoaded', () => {
     const grid = document.getElementById('testimoniesGrid');
     
     if (grid) {
-        // Load saved reviews on page load
-        const savedReviews = localStorage.getItem('savedTestimonies');
-        if (savedReviews) {
-            grid.innerHTML = savedReviews;
-        }
+        // Listen for new reviews from Firebase
+        db.collection("reviews").orderBy("timestamp", "asc").onSnapshot((snapshot) => {
+            snapshot.docChanges().forEach((change) => {
+                if (change.type === "added") {
+                    const data = change.doc.data();
+                    
+                    const card = document.createElement('div');
+                    card.className = 'testimony-card';
+                    card.innerHTML = `
+                        <div class="card-header">
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="quote">"${data.text}"</p>
+                        <div class="user-info">
+                            <img src="https://randomuser.me/api/portraits/lego/1.jpg" alt="User" loading="lazy">
+                            <span>${data.name}</span>
+                        </div>
+                    `;
+                    
+                    grid.insertBefore(card, grid.firstChild);
+                    
+                    // Remove the last review to keep the grid size consistent
+                    if (grid.children.length > 3) { // keep 3 reviews max
+                        grid.removeChild(grid.lastElementChild);
+                    }
+                }
+            });
+        });
     }
 
     if (reviewForm) {
-        reviewForm.addEventListener('submit', (e) => {
+        reviewForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const name = document.getElementById('reviewName').value;
             const text = document.getElementById('reviewText').value;
             
-            if (name && text && grid) {
-                const card = document.createElement('div');
-                card.className = 'testimony-card';
-                card.innerHTML = `
-                    <div class="card-header">
-                        <div class="stars">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                    </div>
-                    <p class="quote">"${text}"</p>
-                    <div class="user-info">
-                        <img src="https://randomuser.me/api/portraits/lego/1.jpg" alt="User" loading="lazy">
-                        <span>${name}</span>
-                    </div>
-                `;
-                
-                grid.insertBefore(card, grid.firstChild);
-                
-                // Remove the last review
-                if (grid.children.length > 0) {
-                    grid.removeChild(grid.lastElementChild);
+            if (name && text) {
+                // Add to Firebase
+                try {
+                    await db.collection("reviews").add({
+                        name: name,
+                        text: text,
+                        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+                    });
+                    
+                    document.getElementById('reviewPopup').classList.remove('show');
+                    reviewForm.reset();
+                    
+                    // Scroll to the review section
+                    grid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } catch (error) {
+                    console.error("Error adding document: ", error);
+                    alert("Failed to add review. Please try again.");
                 }
-                
-                // Save to localStorage
-                localStorage.setItem('savedTestimonies', grid.innerHTML);
-                
-                document.getElementById('reviewPopup').classList.remove('show');
-                reviewForm.reset();
-                
-                // Scroll to the review
-                card.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
         });
     }
