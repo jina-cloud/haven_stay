@@ -162,11 +162,36 @@ function changeGalleryImage3(src, element) {
     if (element) element.classList.add('active-thumb');
 }
 
+function openGallery4() {
+    const popup = document.getElementById('galleryPopup4');
+    if (popup) popup.classList.add('show');
+}
+
+function changeGalleryImage4(src, element) {
+    const mainImg = document.getElementById('galleryMainImage4');
+    if (mainImg) mainImg.src = src;
+    
+    // Remove active class from all thumbs
+    document.querySelectorAll('#galleryPopup4 .gallery-thumbnails .thumb').forEach(thumb => {
+        thumb.classList.remove('active-thumb');
+    });
+    
+    // Add active class to clicked thumb
+    if (element) element.classList.add('active-thumb');
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const closeGalleryBtn3 = document.getElementById('closeGalleryBtn3');
     if (closeGalleryBtn3) {
         closeGalleryBtn3.addEventListener('click', () => {
             document.getElementById('galleryPopup3').classList.remove('show');
+        });
+    }
+
+    const closeGalleryBtn4 = document.getElementById('closeGalleryBtn4');
+    if (closeGalleryBtn4) {
+        closeGalleryBtn4.addEventListener('click', () => {
+            document.getElementById('galleryPopup4').classList.remove('show');
         });
     }
 });

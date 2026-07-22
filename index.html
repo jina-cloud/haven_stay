@@ -130,6 +130,18 @@
                     <button class="btn btn-outline" onclick="openGallery3()">Take a look</button>
                 </div>
             </div>
+            
+            <!-- Room 4 -->
+            <div class="room-card">
+                <div class="room-image">
+                    <img src="room4.jpg" alt="Superior Single Room" loading="lazy">
+                    <span class="price-tag">LKR 12,000 / Night</span>
+                </div>
+                <div class="room-details">
+                    <h3>Superior Single Room</h3>
+                    <button class="btn btn-outline" onclick="openGallery4()">Take a look</button>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -259,6 +271,7 @@
                         <option value="superior_double">Superior Double Room with Balcony</option>
                         <option value="double_balcony">Double Room with Balcony</option>
                         <option value="family_balcony">Family Room with Balcony</option>
+                        <option value="superior_single">Superior Single Room</option>
                     </select>
                 </div>
             </div>
@@ -352,6 +365,21 @@
                 <img src="room3_preview3.jpg" class="thumb" onclick="changeGalleryImage3('room3_preview3.jpg', this)" loading="lazy">
                 <img src="room3_preview4.jpg" class="thumb" onclick="changeGalleryImage3('room3_preview4.jpg', this)" loading="lazy">
                 <img src="room3_preview5.jpg" class="thumb" onclick="changeGalleryImage3('room3_preview5.jpg', this)" loading="lazy">
+            </div>
+        </div>
+    </div>
+
+    <!-- Photo Gallery Popup 4 -->
+    <div id="galleryPopup4" class="popup-overlay">
+        <div class="popup-content gallery-content">
+            <span class="close-gallery" id="closeGalleryBtn4">&times;</span>
+            <div class="gallery-slider">
+                <img id="galleryMainImage4" src="room4.jpg" alt="Room Preview" loading="lazy">
+            </div>
+            <div class="gallery-thumbnails">
+                <img src="room4.jpg" class="thumb active-thumb" onclick="changeGalleryImage4('room4.jpg', this)" loading="lazy">
+                <img src="room4_preview1.jpg" class="thumb" onclick="changeGalleryImage4('room4_preview1.jpg', this)" loading="lazy">
+                <img src="room4_preview2.jpg" class="thumb" onclick="changeGalleryImage4('room4_preview2.jpg', this)" loading="lazy">
             </div>
         </div>
     </div>
