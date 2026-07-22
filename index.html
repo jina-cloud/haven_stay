@@ -110,12 +110,12 @@
             <!-- Room 2 -->
             <div class="room-card">
                 <div class="room-image">
-                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=800&auto=format&fit=crop" alt="Deluxe Room" loading="lazy">
+                    <img src="room2.jpg" alt="Double Room with Balcony" loading="lazy">
                     <span class="price-tag">LKR 18,000 / Night</span>
                 </div>
                 <div class="room-details">
-                    <h3>Deluxe Room with air condition & attached bathroom</h3>
-                    <button class="btn btn-outline" onclick="document.getElementById('contact').scrollIntoView()">Book Now</button>
+                    <h3>Double Room with Balcony</h3>
+                    <button class="btn btn-outline" onclick="openGallery2()">Take a look</button>
                 </div>
             </div>
             
@@ -316,6 +316,24 @@
                 <img src="room1_preview2.jpg" class="thumb" onclick="changeGalleryImage('room1_preview2.jpg', this)" loading="lazy">
                 <img src="room1_preview3.jpg" class="thumb" onclick="changeGalleryImage('room1_preview3.jpg', this)" loading="lazy">
                 <img src="room1_preview4.jpg" class="thumb" onclick="changeGalleryImage('room1_preview4.jpg', this)" loading="lazy">
+            </div>
+        </div>
+    </div>
+
+    <!-- Photo Gallery Popup 2 -->
+    <div id="galleryPopup2" class="popup-overlay">
+        <div class="popup-content gallery-content">
+            <span class="close-gallery" id="closeGalleryBtn2">&times;</span>
+            <div class="gallery-slider">
+                <img id="galleryMainImage2" src="room2.jpg" alt="Room Preview" loading="lazy">
+            </div>
+            <div class="gallery-thumbnails">
+                <img src="room2.jpg" class="thumb active-thumb" onclick="changeGalleryImage2('room2.jpg', this)" loading="lazy">
+                <img src="room2_preview1.jpg" class="thumb" onclick="changeGalleryImage2('room2_preview1.jpg', this)" loading="lazy">
+                <img src="room2_preview2.jpg" class="thumb" onclick="changeGalleryImage2('room2_preview2.jpg', this)" loading="lazy">
+                <img src="room2_preview3.jpg" class="thumb" onclick="changeGalleryImage2('room2_preview3.jpg', this)" loading="lazy">
+                <img src="room2_preview4.jpg" class="thumb" onclick="changeGalleryImage2('room2_preview4.jpg', this)" loading="lazy">
+                <img src="room2_preview5.jpg" class="thumb" onclick="changeGalleryImage2('room2_preview5.jpg', this)" loading="lazy">
             </div>
         </div>
     </div>
