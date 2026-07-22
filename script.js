@@ -221,6 +221,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 grid.insertBefore(card, grid.firstChild);
                 
+                // Remove the last review
+                if (grid.children.length > 0) {
+                    grid.removeChild(grid.lastElementChild);
+                }
+                
                 document.getElementById('reviewPopup').classList.remove('show');
                 reviewForm.reset();
                 
