@@ -196,12 +196,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const reviewForm = document.getElementById('reviewForm');
+    const grid = document.getElementById('testimoniesGrid');
+    
+    if (grid) {
+        // Load saved reviews on page load
+        const savedReviews = localStorage.getItem('savedTestimonies');
+        if (savedReviews) {
+            grid.innerHTML = savedReviews;
+        }
+    }
+
     if (reviewForm) {
         reviewForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const name = document.getElementById('reviewName').value;
             const text = document.getElementById('reviewText').value;
-            const grid = document.getElementById('testimoniesGrid');
             
             if (name && text && grid) {
                 const card = document.createElement('div');
@@ -225,6 +234,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (grid.children.length > 0) {
                     grid.removeChild(grid.lastElementChild);
                 }
+                
+                // Save to localStorage
+                localStorage.setItem('savedTestimonies', grid.innerHTML);
                 
                 document.getElementById('reviewPopup').classList.remove('show');
                 reviewForm.reset();
