@@ -243,29 +243,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (reviewForm) {
-        reviewForm.addEventListener('submit', async (e) => {
+        reviewForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const name = document.getElementById('reviewName').value;
             const text = document.getElementById('reviewText').value;
             
             if (name && text) {
-                // Add to Firebase
-                try {
-                    await db.collection("reviews").add({
-                        name: name,
-                        text: text,
-                        timestamp: firebase.firestore.FieldValue.serverTimestamp()
-                    });
-                    
-                    document.getElementById('reviewPopup').classList.remove('show');
-                    reviewForm.reset();
-                    
-                    // Scroll to the review section
-                    grid.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                } catch (error) {
+                // Close popup immediately
+                document.getElementById('reviewPopup').classList.remove('show');
+                reviewForm.reset();
+                
+                // Scroll to the review section
+                grid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                // Add to Firebase in the background
+                db.collection("reviews").add({
+                    name: name,
+                    text: text,
+                    timestamp: firebase.firestore.FieldValue.serverTimestamp()
+                }).catch((error) => {
                     console.error("Error adding document: ", error);
-                    alert("Failed to add review. Please try again.");
-                }
+                    alert("Database Error: Please make sure you created the Firestore Database in 'Test Mode'.");
+                });
             }
         });
     }
