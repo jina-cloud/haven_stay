@@ -143,3 +143,30 @@ function changeGalleryImage2(src, element) {
     // Add active class to clicked thumb
     if (element) element.classList.add('active-thumb');
 }
+
+function openGallery3() {
+    const popup = document.getElementById('galleryPopup3');
+    if (popup) popup.classList.add('show');
+}
+
+function changeGalleryImage3(src, element) {
+    const mainImg = document.getElementById('galleryMainImage3');
+    if (mainImg) mainImg.src = src;
+    
+    // Remove active class from all thumbs
+    document.querySelectorAll('#galleryPopup3 .gallery-thumbnails .thumb').forEach(thumb => {
+        thumb.classList.remove('active-thumb');
+    });
+    
+    // Add active class to clicked thumb
+    if (element) element.classList.add('active-thumb');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const closeGalleryBtn3 = document.getElementById('closeGalleryBtn3');
+    if (closeGalleryBtn3) {
+        closeGalleryBtn3.addEventListener('click', () => {
+            document.getElementById('galleryPopup3').classList.remove('show');
+        });
+    }
+});

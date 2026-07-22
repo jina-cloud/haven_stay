@@ -122,12 +122,12 @@
             <!-- Room 3 -->
             <div class="room-card">
                 <div class="room-image">
-                    <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=800&auto=format&fit=crop" alt="Premium Room" loading="lazy">
+                    <img src="room3.jpg" alt="Family Room with Balcony" loading="lazy">
                     <span class="price-tag">LKR 25,000 / Night</span>
                 </div>
                 <div class="room-details">
-                    <h3>Premium Room with air condition, attached bathroom, & rooftop access</h3>
-                    <button class="btn btn-outline" onclick="document.getElementById('contact').scrollIntoView()">Book Now</button>
+                    <h3>Family Room with Balcony</h3>
+                    <button class="btn btn-outline" onclick="openGallery3()">Take a look</button>
                 </div>
             </div>
         </div>
@@ -257,8 +257,8 @@
                     <select name="room_type" id="roomType" required>
                         <option value="" disabled selected>Select Room</option>
                         <option value="superior_double">Superior Double Room with Balcony</option>
-                        <option value="deluxe">Deluxe Room</option>
-                        <option value="premium">Premium Room</option>
+                        <option value="double_balcony">Double Room with Balcony</option>
+                        <option value="family_balcony">Family Room with Balcony</option>
                     </select>
                 </div>
             </div>
@@ -334,6 +334,24 @@
                 <img src="room2_preview3.jpg" class="thumb" onclick="changeGalleryImage2('room2_preview3.jpg', this)" loading="lazy">
                 <img src="room2_preview4.jpg" class="thumb" onclick="changeGalleryImage2('room2_preview4.jpg', this)" loading="lazy">
                 <img src="room2_preview5.jpg" class="thumb" onclick="changeGalleryImage2('room2_preview5.jpg', this)" loading="lazy">
+            </div>
+        </div>
+    </div>
+
+    <!-- Photo Gallery Popup 3 -->
+    <div id="galleryPopup3" class="popup-overlay">
+        <div class="popup-content gallery-content">
+            <span class="close-gallery" id="closeGalleryBtn3">&times;</span>
+            <div class="gallery-slider">
+                <img id="galleryMainImage3" src="room3.jpg" alt="Room Preview" loading="lazy">
+            </div>
+            <div class="gallery-thumbnails">
+                <img src="room3.jpg" class="thumb active-thumb" onclick="changeGalleryImage3('room3.jpg', this)" loading="lazy">
+                <img src="room3_preview1.jpg" class="thumb" onclick="changeGalleryImage3('room3_preview1.jpg', this)" loading="lazy">
+                <img src="room3_preview2.jpg" class="thumb" onclick="changeGalleryImage3('room3_preview2.jpg', this)" loading="lazy">
+                <img src="room3_preview3.jpg" class="thumb" onclick="changeGalleryImage3('room3_preview3.jpg', this)" loading="lazy">
+                <img src="room3_preview4.jpg" class="thumb" onclick="changeGalleryImage3('room3_preview4.jpg', this)" loading="lazy">
+                <img src="room3_preview5.jpg" class="thumb" onclick="changeGalleryImage3('room3_preview5.jpg', this)" loading="lazy">
             </div>
         </div>
     </div>
